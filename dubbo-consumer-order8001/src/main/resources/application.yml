@@ -1,0 +1,17 @@
+server:
+  port: 8001
+---
+spring:
+  application:
+    name: dubbo-consumer-order
+---
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+    check: false
+  protocol:
+    name: dubbo
+    port: -1
